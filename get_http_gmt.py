@@ -27,7 +27,7 @@ def get_http_gmt():
               12 : "Dec"}
     time = gmtime()
     pretty_time = "{day}, ".format(day = days[time.tm_wday])
-    pretty_time += "{:02} ".format(time.tm_wday)
+    pretty_time += "{:02} ".format(time.tm_mday)
     pretty_time += "{month} ".format(month = months[time.tm_mon])
     pretty_time += "{year} ".format(year = time.tm_year)
     pretty_time += "{:02}:{:02}:".format(time.tm_hour, time.tm_min)
@@ -37,4 +37,4 @@ def get_http_gmt():
 
 
 if __name__ == """__main__""":
-    print(get_pretty_gmt())
+    print(get_http_gmt())
