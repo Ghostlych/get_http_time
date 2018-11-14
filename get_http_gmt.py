@@ -26,14 +26,14 @@ def get_http_gmt():
               11 : "Nov",
               12 : "Dec"}
     time = gmtime()
-    http_time = "{day}, ".format(day = days[time.tm_wday])
-    http_time += "{:02} ".format(time.tm_mday)
-    http_time += "{month} ".format(month = months[time.tm_mon])
-    http_time += "{year} ".format(year = time.tm_year)
-    http_time += "{:02}:{:02}:".format(time.tm_hour, time.tm_min)
-    http_time += "{:02} ".format(time.tm_sec)
-    http_time += "GMT"
-    return http_time
+    http_time = ["{day},".format(day = days[time.tm_wday])]
+    http_time.append("{:02}".format(time.tm_mday))
+    http_time.append("{month}".format(month = months[time.tm_mon]))
+    http_time.append("{year}".format(year = time.tm_year))
+    http_time.append("{:02}:{:02}:{:02}"
+                     .format(time.tm_hour, time.tm_min, time.tm_sec))
+    http_time.append("GMT")
+    return " ".join(http_time)
 
 
 if __name__ == """__main__""":
