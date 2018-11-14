@@ -5,7 +5,7 @@ from time import gmtime
 
 
 def get_http_gmt():
-    """ Gets pretty gmt time. Returns a string."""
+    """ Gets http gmt time. Returns a string."""
     days = {0 : "Mon",
             1 : "Tue",
             2 : "Wed",
@@ -26,14 +26,14 @@ def get_http_gmt():
               11 : "Nov",
               12 : "Dec"}
     time = gmtime()
-    pretty_time = "{day}, ".format(day = days[time.tm_wday])
-    pretty_time += "{:02} ".format(time.tm_mday)
-    pretty_time += "{month} ".format(month = months[time.tm_mon])
-    pretty_time += "{year} ".format(year = time.tm_year)
-    pretty_time += "{:02}:{:02}:".format(time.tm_hour, time.tm_min)
-    pretty_time += "{:02} ".format(time.tm_sec)
-    pretty_time += "GMT"
-    return pretty_time
+    http_time = "{day}, ".format(day = days[time.tm_wday])
+    http_time += "{:02} ".format(time.tm_mday)
+    http_time += "{month} ".format(month = months[time.tm_mon])
+    http_time += "{year} ".format(year = time.tm_year)
+    http_time += "{:02}:{:02}:".format(time.tm_hour, time.tm_min)
+    http_time += "{:02} ".format(time.tm_sec)
+    http_time += "GMT"
+    return http_time
 
 
 if __name__ == """__main__""":
